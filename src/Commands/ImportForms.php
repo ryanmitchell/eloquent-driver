@@ -7,6 +7,7 @@ use Statamic\Console\RunsInPlease;
 use Statamic\Contracts\Forms\Form as FormContract;
 use Statamic\Contracts\Forms\FormRepository as FormRepositoryContract;
 use Statamic\Eloquent\Forms\Form;
+use Statamic\Eloquent\Import\FormSubmissions;
 use Statamic\Forms\FormRepository;
 use Statamic\Statamic;
 
@@ -59,7 +60,7 @@ class ImportForms extends Command
             $model = $form->toModel();
             $model->save();
 
-            $form->fileSubmissions()->each(function ($submission) use ($model) {
+            FormSubmissions::fileSubmissionsForForm($form)->each(function ($submission) use ($model) {
                 $model->submissions()->create([
                     'created_at' => $submission->date(),
                     'data' => $submission->data(),
