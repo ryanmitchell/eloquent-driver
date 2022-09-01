@@ -37,6 +37,11 @@ return new class extends Migration
         Schema::dropIfExists($this->prefix('blueprints'));
     }
 
+    /**
+     * Seed default blueprint.
+     *
+     * @return void
+     */
     public function seedDefaultBlueprint()
     {
         try {

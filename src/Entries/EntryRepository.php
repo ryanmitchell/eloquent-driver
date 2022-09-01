@@ -26,6 +26,7 @@ class EntryRepository extends StacheRepository
 
         if (! $item) {
             Blink::forget($blinkKey);
+
             return null;
         }
 
@@ -41,6 +42,7 @@ class EntryRepository extends StacheRepository
 
         if (! $item) {
             Blink::forget($blinkKey);
+
             return null;
         }
 

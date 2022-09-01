@@ -2,11 +2,9 @@
 
 namespace Statamic\Eloquent\Taxonomies;
 
-use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Statamic\Contracts\Taxonomies\Term as TermContract;
 use Statamic\Facades\Collection;
-use Statamic\Facades\Taxonony;
 use Statamic\Facades\Entry;
 use Statamic\Facades\Site;
 use Statamic\Query\EloquentQueryBuilder;
@@ -95,7 +93,6 @@ class TermQueryBuilder extends EloquentQueryBuilder
             $column = 'slug';
 
             if (str_contains($value, '::')) {
-
                 $taxonomy = Str::before($value.'', '::');
 
                 if ($taxonomy) {
@@ -103,7 +100,6 @@ class TermQueryBuilder extends EloquentQueryBuilder
                 }
 
                 $value = Str::after($value, '::');
-
             }
         }
 
@@ -204,7 +200,6 @@ class TermQueryBuilder extends EloquentQueryBuilder
     {
         if (! empty($this->collections)) {
             $this->builder->where(function ($query) {
-
                 $taxonomies = empty($this->taxonomies)
                     ? Taxonomy::handles()->all()
                     : $this->taxonomies;
@@ -242,9 +237,7 @@ class TermQueryBuilder extends EloquentQueryBuilder
                                 ->whereIn('slug', $terms);
                         });
                     });
-
             });
-
         }
 
         if (! empty($this->taxonomies)) {
