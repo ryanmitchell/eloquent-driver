@@ -143,7 +143,7 @@ class AssetContainerContents extends CoreAssetContainerContents
 
     private function key()
     {
-        return 'asset-folder-contents-'.$this->container->handle();
+        return 'asset-list-contents-'.$this->container->handle();
     }
 
     private function ttl()
