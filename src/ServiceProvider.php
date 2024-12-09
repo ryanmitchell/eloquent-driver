@@ -552,6 +552,7 @@ class ServiceProvider extends AddonServiceProvider
             'Collection Trees' => config('statamic.eloquent-driver.collection_trees.driver', 'file'),
             'Entries' => config('statamic.eloquent-driver.entries.driver', 'file'),
             'Forms' => config('statamic.eloquent-driver.forms.driver', 'file'),
+            'Form Submissions' => config('statamic.eloquent-driver.form_submissions.driver', 'file'),
             'Global Sets' => config('statamic.eloquent-driver.global_sets.driver', 'file'),
             'Global Variables' => config('statamic.eloquent-driver.global_set_variables.driver', 'file'),
             'Navigations' => config('statamic.eloquent-driver.navigations.driver', 'file'),
